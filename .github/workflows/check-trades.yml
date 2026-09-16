@@ -1,4 +1,4 @@
-name: Scan Signal
+name: Check Trade
 
 on:
   workflow_dispatch:
