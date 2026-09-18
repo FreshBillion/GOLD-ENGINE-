@@ -42,8 +42,7 @@ def evaluate(exchange, symbol=config.SYMBOL):
         bias = "BUY"
     elif last_trend["close"] < last_trend["ema50"] < last_trend["ema200"]:
         bias = "SELL"
-    else:
-        return None  # trend gate failed
+  
 
     else:
         logging.info(
