@@ -45,6 +45,13 @@ def evaluate(exchange, symbol=config.SYMBOL):
     else:
         return None  # trend gate failed
 
+    else:
+        logging.info(
+            f"{symbol}: trend gate failed - close={last_trend['close']:.2f}, "
+            f"ema50={last_trend['ema50']:.2f}, ema200={last_trend['ema200']:.2f}"
+        )
+        return None
+
     entry_df["rsi"] = rsi(entry_df["close"])
     entry_df["macd"], entry_df["macd_signal"] = macd(entry_df["close"])
     entry_df["atr"] = atr(entry_df)
