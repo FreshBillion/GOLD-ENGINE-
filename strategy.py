@@ -11,7 +11,7 @@ Grading:
     2/5 -> C
     <2  -> no signal (skipped)
 """
-
+import logging
 from datetime import datetime, timezone
 import config
 from data_fetcher import fetch_ohlcv
@@ -52,8 +52,8 @@ def evaluate(exchange, symbol=config.SYMBOL):
     entry_df["vol_avg"] = entry_df["volume"].rolling(20).mean()
     entry_df["bb_upper"], entry_df["bb_lower"] = bollinger(entry_df["close"])
 
-    last = entry_df.iloc[-1]
-    prev = entry_df.iloc[-2]
+    last = entry_df.iloc[-2]
+    prev = entry_df.iloc[-3]
 
     score = 0
     conditions_met = []
@@ -80,6 +80,8 @@ def evaluate(exchange, symbol=config.SYMBOL):
             score += 1; conditions_met.append("Volume above average")
         if last["close"] < last["bb_lower"] or (prev["close"] >= prev["bb_lower"] > last["close"]):
             score += 1; conditions_met.append("Breaking lower Bollinger band")
+
+    logging.info(f"{symbol}: bias={bias}, score={score}/5, conditions={conditions_met}")
 
     if score < config.MIN_SCORE_TO_SEND:
         return None
