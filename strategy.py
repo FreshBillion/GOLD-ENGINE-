@@ -38,17 +38,14 @@ def evaluate(exchange, symbol=config.SYMBOL):
     trend_df["ema200"] = ema(trend_df["close"], 200)
     last_trend = trend_df.iloc[-1]
 
-    if last_trend["close"] > last_trend["ema50"] > last_trend["ema200"]:
-        bias = "BUY"
-    elif last_trend["close"] < last_trend["ema50"] < last_trend["ema200"]:
-        bias = "SELL"
-  
+    
 
+    if last_trend["close"] > last_trend["ema200"]:
+        bias = "BUY"
+    elif last_trend["close"] < last_trend["ema200"]:
+        bias = "SELL"
     else:
-        logging.info(
-            f"{symbol}: trend gate failed - close={last_trend['close']:.2f}, "
-            f"ema50={last_trend['ema50']:.2f}, ema200={last_trend['ema200']:.2f}"
-        )
+        logging.info(f"{symbol}: trend gate failed - close={last_trend['close']:.2f}, ema200={last_trend['ema200']:.2f}")
         return None
 
     entry_df["rsi"] = rsi(entry_df["close"])
