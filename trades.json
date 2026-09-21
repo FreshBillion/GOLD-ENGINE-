@@ -67,5 +67,27 @@
     "opened_at": "2026-09-21T01:00:43.080149+00:00",
     "id": 3,
     "closed_at": "2026-09-21T01:06:25.526694+00:00"
+  },
+  {
+    "symbol": "PAXG/USD",
+    "direction": "SELL",
+    "grade": "C",
+    "score": 2,
+    "max_score": 5,
+    "conditions_met": [
+      "Volatility expanding (ATR > average)",
+      "Breaking lower Bollinger band"
+    ],
+    "entry": 4348.51,
+    "stop_loss": 4360.561428571429,
+    "tp1": 4336.458571428571,
+    "tp2": 4324.407142857143,
+    "tp3": 4312.355714285714,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "tp3_hit": false,
+    "status": "open",
+    "opened_at": "2026-09-21T05:15:33.269943+00:00",
+    "id": 4
   }
 ]
