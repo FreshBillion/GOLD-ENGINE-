@@ -91,8 +91,9 @@ def evaluate(exchange, symbol=config.SYMBOL):
 
     grade = grade_from_score(score)
     entry_price = float(last["close"])
-    stop_distance = float(last["atr"]) * config.ATR_STOP_MULTIPLIER
-
+    raw_stop_distance = float(last["atr"]) * config.ATR_STOP_MULTIPLIER
+    stop_distance = max(config.SL_MIN_DOLLARS, min(raw_stop_distance, config.SL_MAX_DOLLARS))
+  
     if bias == "BUY":
         stop_loss = entry_price - stop_distance
         tp1, tp2, tp3 = [entry_price + stop_distance * r for r in config.TP_R_MULTIPLES]
