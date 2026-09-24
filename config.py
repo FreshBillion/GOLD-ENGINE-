@@ -11,6 +11,8 @@ ENTRY_TIMEFRAME = os.environ.get("ENTRY_TIMEFRAME", "1h")
 CANDLE_LIMIT = 300
 
 ATR_STOP_MULTIPLIER = 1.5
+SL_MIN_DOLLARS = 10
+SL_MAX_DOLLARS = 12
 TP_R_MULTIPLES = [1.0, 2.0, 3.0]   # TP1, TP2, TP3 as multiples of the stop distance
 
 MIN_SCORE_TO_SEND = 2
