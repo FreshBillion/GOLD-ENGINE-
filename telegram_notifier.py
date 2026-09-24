@@ -43,18 +43,25 @@ def send_new_signal(signal):
     )
     _send(config.TELEGRAM_PERSONAL_CHAT_ID, personal_text)
 
-
 def send_trade_update(trade, event, current_price):
     symbol = trade["symbol"]
     direction = trade["direction"]
 
-    messages = {
-        "tp1_hit": f"🎯 *TP1 hit* — {symbol} {direction} @ `{current_price:.2f}`",
-        "tp2_hit": f"🎯 *TP2 hit* — {symbol} {direction} @ `{current_price:.2f}`\nStop moved to breakeven.",
-        "tp3_hit": f"✅ *TP3 hit — trade closed* — {symbol} {direction} @ `{current_price:.2f}`\nFull target reached.",
-        "sl_hit": f"🛑 *Stop loss hit — trade closed* — {symbol} {direction} @ `{current_price:.2f}`",
-    }
-    text = messages.get(event, f"Update on {symbol} {direction}: {event}")
+    if event == "sl_hit":
+        if trade["stop_loss"] == trade["entry"]:
+            text = (
+                f"⚖️ *Stopped at breakeven — Trade closed, no loss* — "
+                f"{symbol} {direction} @ entry `{trade['entry']:.2f}`"
+            )
+        else:
+            text = f"🛑 *Stop loss hit — trade closed* — {symbol} {direction} @ `{current_price:.2f}`"
+    else:
+        messages = {
+            "tp1_hit": f"🎯 *TP1 hit* — {symbol} {direction} @ `{current_price:.2f}`",
+            "tp2_hit": f"🎯 *TP2 hit* — {symbol} {direction} @ `{current_price:.2f}`\nStop moved to breakeven.",
+            "tp3_hit": f"✅ *TP3 hit — trade closed* — {symbol} {direction} @ `{current_price:.2f}`\nFull target reached.",
+        }
+        text = messages.get(event, f"Update on {symbol} {direction}: {event}")
 
     _send(config.TELEGRAM_CHANNEL_ID, text)
     _send(config.TELEGRAM_PERSONAL_CHAT_ID, text)
