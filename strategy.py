@@ -15,7 +15,7 @@ import logging
 from datetime import datetime, timezone
 import config
 from data_fetcher import fetch_ohlcv
-from indicators import ema, rsi, macd, atr, bollinger
+from indicators import ema, rsi, macd, atr, bollinger, adx
 
 
 def grade_from_score(score):
@@ -52,9 +52,9 @@ def evaluate(exchange, symbol=config.SYMBOL):
     entry_df["macd"], entry_df["macd_signal"] = macd(entry_df["close"])
     entry_df["atr"] = atr(entry_df)
     entry_df["atr_avg"] = entry_df["atr"].rolling(50).mean()
-    entry_df["vol_avg"] = entry_df["volume"].rolling(20).mean()
+    entry_df["adx"] = adx(entry_df)
     entry_df["bb_upper"], entry_df["bb_lower"] = bollinger(entry_df["close"])
-
+    
     last = entry_df.iloc[-2]
     prev = entry_df.iloc[-3]
 
@@ -68,8 +68,8 @@ def evaluate(exchange, symbol=config.SYMBOL):
             score += 1; conditions_met.append("MACD bullish cross")
         if last["atr"] > last["atr_avg"]:
             score += 1; conditions_met.append("Volatility expanding (ATR > average)")
-        if last["volume"] > last["vol_avg"]:
-            score += 1; conditions_met.append("Volume above average")
+        if last["adx"] > 20:
+            score += 1; conditions_met.append("ADX confirms trending market (ADX > 20)")
         if last["close"] > last["bb_upper"] or (prev["close"] <= prev["bb_upper"] < last["close"]):
             score += 1; conditions_met.append("Breaking upper Bollinger band")
     else:
@@ -79,8 +79,8 @@ def evaluate(exchange, symbol=config.SYMBOL):
             score += 1; conditions_met.append("MACD bearish cross")
         if last["atr"] > last["atr_avg"]:
             score += 1; conditions_met.append("Volatility expanding (ATR > average)")
-        if last["volume"] > last["vol_avg"]:
-            score += 1; conditions_met.append("Volume above average")
+        if last["adx"] > 20:
+            score += 1; conditions_met.append("ADX confirms trending market (ADX > 20)")
         if last["close"] < last["bb_lower"] or (prev["close"] >= prev["bb_lower"] > last["close"]):
             score += 1; conditions_met.append("Breaking lower Bollinger band")
 
