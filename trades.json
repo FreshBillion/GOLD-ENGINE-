@@ -276,5 +276,27 @@
     "opened_at": "2026-09-25T14:15:29.889873+00:00",
     "id": 12,
     "closed_at": "2026-09-25T16:05:11.697022+00:00"
+  },
+  {
+    "symbol": "XAU/USD",
+    "direction": "SELL",
+    "grade": "C",
+    "score": 2,
+    "max_score": 5,
+    "conditions_met": [
+      "MACD bearish cross",
+      "Volatility expanding (ATR > average)"
+    ],
+    "entry": 4282.75606,
+    "stop_loss": 4294.75606,
+    "tp1": 4270.75606,
+    "tp2": 4258.75606,
+    "tp3": 4246.75606,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "tp3_hit": false,
+    "status": "open",
+    "opened_at": "2026-09-25T18:15:31.381495+00:00",
+    "id": 13
   }
 ]
