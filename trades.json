@@ -384,15 +384,16 @@
       "ADX confirms trending market (ADX > 20)"
     ],
     "entry": 4158.6925,
-    "stop_loss": 4170.6925,
+    "stop_loss": 4158.6925,
     "tp1": 4146.6925,
     "tp2": 4134.6925,
     "tp3": 4122.6925,
-    "tp1_hit": false,
-    "tp2_hit": false,
-    "tp3_hit": false,
-    "status": "open",
+    "tp1_hit": true,
+    "tp2_hit": true,
+    "tp3_hit": true,
+    "status": "closed:tp3",
     "opened_at": "2026-09-28T14:45:30.705279+00:00",
-    "id": 17
+    "id": 17,
+    "closed_at": "2026-09-28T14:48:26.898360+00:00"
   }
 ]
