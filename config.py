@@ -15,7 +15,7 @@ SL_MIN_DOLLARS = 10
 SL_MAX_DOLLARS = 12
 TP_R_MULTIPLES = [1.0, 2.0, 3.0]   # TP1, TP2, TP3 as multiples of the stop distance
 
-MIN_SCORE_TO_SEND = 2
+MIN_SCORE_TO_SEND = 3
 COOLDOWN_MINUTES = 240
 
 TRADES_FILE = "trades.json"
