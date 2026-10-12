@@ -773,5 +773,28 @@
     "opened_at": "2026-10-12T00:15:28.469008+00:00",
     "id": 33,
     "closed_at": "2026-10-12T00:18:27.539317+00:00"
+  },
+  {
+    "symbol": "XAU/USD",
+    "direction": "SELL",
+    "grade": "B",
+    "score": 3,
+    "max_score": 5,
+    "conditions_met": [
+      "RSI losing 60 from overbought",
+      "Volatility expanding (ATR > average)",
+      "ADX confirms trending market (ADX > 20)"
+    ],
+    "entry": 4202.75435,
+    "stop_loss": 4212.75435,
+    "tp1": 4192.75435,
+    "tp2": 4182.75435,
+    "tp3": 4172.75435,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "tp3_hit": false,
+    "status": "open",
+    "opened_at": "2026-10-12T04:30:28.493468+00:00",
+    "id": 34
   }
 ]
