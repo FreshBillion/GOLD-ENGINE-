@@ -792,9 +792,10 @@
     "tp3": 4172.75435,
     "tp1_hit": true,
     "tp2_hit": true,
-    "tp3_hit": false,
-    "status": "open",
+    "tp3_hit": true,
+    "status": "closed:tp3",
     "opened_at": "2026-10-12T04:30:28.493468+00:00",
-    "id": 34
+    "id": 34,
+    "closed_at": "2026-10-12T09:39:36.353741+00:00"
   }
 ]
