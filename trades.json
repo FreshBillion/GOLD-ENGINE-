@@ -1400,5 +1400,28 @@
     "opened_at": "2026-11-05T02:15:30.408080+00:00",
     "id": 59,
     "closed_at": "2026-11-05T05:33:24.756452+00:00"
+  },
+  {
+    "symbol": "XAU/USD",
+    "direction": "BUY",
+    "grade": "B",
+    "score": 3,
+    "max_score": 5,
+    "conditions_met": [
+      "RSI reclaiming 40 from oversold",
+      "Volatility expanding (ATR > average)",
+      "ADX confirms trending market (ADX > 20)"
+    ],
+    "entry": 4126.98812,
+    "stop_loss": 4114.98812,
+    "tp1": 4138.98812,
+    "tp2": 4150.98812,
+    "tp3": 4162.98812,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "tp3_hit": false,
+    "status": "open",
+    "opened_at": "2026-11-05T17:15:22.356954+00:00",
+    "id": 60
   }
 ]
