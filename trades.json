@@ -1424,5 +1424,28 @@
     "opened_at": "2026-11-05T17:15:22.356954+00:00",
     "id": 60,
     "closed_at": "2026-11-05T17:27:27.418381+00:00"
+  },
+  {
+    "symbol": "XAU/USD",
+    "direction": "SELL",
+    "grade": "B",
+    "score": 3,
+    "max_score": 5,
+    "conditions_met": [
+      "Volatility expanding (ATR > average)",
+      "ADX confirms trending market (ADX > 20)",
+      "Breaking lower Bollinger band"
+    ],
+    "entry": 4060.51731,
+    "stop_loss": 4072.51731,
+    "tp1": 4048.51731,
+    "tp2": 4036.51731,
+    "tp3": 4024.51731,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "tp3_hit": false,
+    "status": "open",
+    "opened_at": "2026-11-06T02:15:27.389706+00:00",
+    "id": 61
   }
 ]
