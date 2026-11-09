@@ -1467,7 +1467,7 @@
     "tp1": 4114.34456,
     "tp2": 4124.34456,
     "tp3": 4134.34456,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "tp2_hit": false,
     "tp3_hit": false,
     "status": "open",
