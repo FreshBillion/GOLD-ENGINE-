@@ -1853,7 +1853,7 @@
     "tp1": 3508.57004,
     "tp2": 3496.57004,
     "tp3": 3484.57004,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "tp2_hit": false,
     "tp3_hit": false,
     "status": "open",
