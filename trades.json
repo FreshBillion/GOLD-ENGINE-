@@ -1856,8 +1856,9 @@
     "tp1_hit": true,
     "tp2_hit": false,
     "tp3_hit": false,
-    "status": "open",
+    "status": "closed:sl",
     "opened_at": "2026-11-20T20:30:25.859430+00:00",
-    "id": 78
+    "id": 78,
+    "closed_at": "2026-11-20T21:51:28.594336+00:00"
   }
 ]
