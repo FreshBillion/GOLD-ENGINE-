@@ -1831,9 +1831,10 @@
     "tp3": 3523.04104,
     "tp1_hit": true,
     "tp2_hit": true,
-    "tp3_hit": false,
-    "status": "open",
+    "tp3_hit": true,
+    "status": "closed:tp3",
     "opened_at": "2026-11-20T02:15:32.332947+00:00",
-    "id": 77
+    "id": 77,
+    "closed_at": "2026-11-20T03:27:26.692640+00:00"
   }
 ]
