@@ -2022,7 +2022,7 @@
     "tp1": 3565.56675,
     "tp2": 3553.56675,
     "tp3": 3541.56675,
-    "tp1_hit": false,
+    "tp1_hit": true,
     "tp2_hit": false,
     "tp3_hit": false,
     "status": "open",
